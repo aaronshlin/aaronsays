@@ -51,6 +51,40 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Nav bar */
+
+.site-nav {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 0;
+  display: flex;
+  gap: 1.75rem;
+  border-bottom: 1px solid #000;
+  padding-bottom: 1rem;
+}
+
+.site-nav a {
+  font-size: 0.875rem;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover {
+  border-bottom-color: #000;
+}
+
+.site-nav a[aria-current="page"] {
+  border-bottom-color: #000;
+}
+
+.section-list {
+  margin-top: 0;
+}
+
 main {
   max-width: 42rem;
   margin: 0 auto;
