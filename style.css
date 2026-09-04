@@ -188,7 +188,21 @@ main {
   margin: 0 0 1.25rem;
 }
 
-.post-body p:last-child {
+.post-body ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.post-body li {
+  margin: 0 0 0.35rem;
+}
+
+.post-body li:last-child {
+  margin-bottom: 0;
+}
+
+.post-body p:last-child,
+.post-body ul:last-child {
   margin-bottom: 0;
 }
 
