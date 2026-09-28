@@ -206,6 +206,53 @@ main {
   margin-bottom: 0;
 }
 
+/* Quotes */
+
+.quote-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quote-list > li {
+  margin: 0 0 2rem;
+  padding: 0 0 2rem;
+  border-bottom: 1px solid #000;
+}
+
+.quote-list > li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.quote-list blockquote {
+  margin: 0;
+  padding: 0;
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.quote-list figure {
+  margin: 0;
+}
+
+.quote-list blockquote p {
+  margin: 0;
+}
+
+.quote-source {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.quote-source::before {
+  content: "— ";
+}
+
 /* Responsive */
 
 @media (max-width: 480px) {
