@@ -208,30 +208,41 @@ main {
 
 /* Quotes */
 
+.quotes-page .site-header,
+.quotes-page .site-nav,
+.quotes-page main {
+  max-width: 54rem;
+}
+
 .quote-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
 }
 
 .quote-list > li {
-  margin: 0 0 2rem;
-  padding: 0 0 2rem;
-  border-bottom: 1px solid #000;
+  margin: 0;
+  padding: 1.15rem 1.2rem 1.25rem;
+  border: 1px solid #000;
+  background: #fff;
+  min-width: 0;
 }
 
 .quote-list > li:last-child {
   margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #000;
 }
 
 .quote-list blockquote {
   margin: 0;
   padding: 0;
   font-family: "Lora", Georgia, "Times New Roman", serif;
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .quote-list figure {
@@ -243,8 +254,8 @@ main {
 }
 
 .quote-source {
-  margin: 0.5rem 0 0;
-  font-size: 0.875rem;
+  margin: 0.65rem 0 0;
+  font-size: 0.8125rem;
   font-style: normal;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -270,8 +281,8 @@ main {
   top: 0;
   z-index: 2;
   background: #fff;
-  margin: 0 0 2rem;
-  padding: 0.75rem 0 1rem;
+  margin: 0 0 1.5rem;
+  padding: 0.75rem 0 1.1rem;
   border-bottom: 1px solid #000;
 }
 
@@ -279,77 +290,85 @@ main {
   display: block;
   width: 100%;
   margin: 0;
-  padding: 0.35rem 0 0.5rem;
-  border: none;
-  border-bottom: 1px solid #000;
-  background: transparent;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #000;
+  background: #fff;
   color: inherit;
   font: inherit;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   border-radius: 0;
   appearance: none;
 }
 
 .quote-search::placeholder {
   color: #000;
-  opacity: 0.45;
+  opacity: 0.4;
 }
 
 .quote-search:focus {
-  outline: none;
-  border-bottom-width: 2px;
+  outline: 1px solid #000;
+  outline-offset: 2px;
 }
 
 .quote-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem 1.15rem;
-  margin: 1rem 0 0;
+  gap: 0.45rem;
+  margin: 0.9rem 0 0;
 }
 
-.quote-filters button {
+.quote-filters button,
+.quote-pager button {
   margin: 0;
-  padding: 0 0 2px;
-  border: none;
-  border-bottom: 2px solid transparent;
-  background: none;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #000;
+  background: #fff;
   color: inherit;
   font-family: inherit;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
+  line-height: 1.3;
+  appearance: none;
+  border-radius: 0;
 }
 
-.quote-filters button:hover {
-  border-bottom-color: #000;
+.quote-filters button:hover,
+.quote-pager button:hover:not(:disabled) {
+  background: #000;
+  color: #fff;
 }
 
 .quote-filters button[aria-pressed="true"] {
-  border-bottom-color: #000;
+  background: #000;
+  color: #fff;
 }
 
-.quote-filters button:focus-visible {
+.quote-filters button:focus-visible,
+.quote-pager button:focus-visible,
+.quote-search:focus-visible {
   outline: 1px solid #000;
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
 .quote-count,
-.quote-empty {
+.quote-empty,
+.quote-pager-status {
   margin: 0.85rem 0 0;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
 }
 
 .quote-empty {
-  margin-bottom: 2rem;
+  margin: 0 0 1.25rem;
 }
 
 .quote-kicker {
-  margin: 0 0 0.5rem;
-  font-size: 0.75rem;
+  margin: 0 0 0.55rem;
+  font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -359,6 +378,34 @@ body[data-quote-cat]:not([data-quote-cat="all"]) .quote-kicker {
 
 .quote-list > li[hidden] {
   display: none;
+}
+
+.quote-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.35rem 0 0;
+}
+
+.quote-pager[hidden] {
+  display: none;
+}
+
+.quote-pager-status {
+  margin: 0;
+  text-align: center;
+}
+
+.quote-pager button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+@media (max-width: 720px) {
+  .quote-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Responsive */

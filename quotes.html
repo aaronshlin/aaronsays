@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="quotes-page">
   <header class="site-header">
     <a href="index.html">aaronsays</a>
   </header>
@@ -1306,6 +1306,12 @@
         </blockquote>
       </li>
     </ul>
+
+    <nav class="quote-pager" aria-label="Quote pages" hidden>
+      <button type="button" class="quote-pager-prev">Previous</button>
+      <p class="quote-pager-status"></p>
+      <button type="button" class="quote-pager-next">Next</button>
+    </nav>
   </main>
   <script src="quotes.js" defer></script>
 </body>
